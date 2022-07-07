@@ -7,7 +7,6 @@ const tips = [...Array(20).keys()].map((v) => `Tip - ${v}`)
 
 const Tips = () => {
   const [data] = createResource(getTips)
-
   return (
     <Container
       sx={{
