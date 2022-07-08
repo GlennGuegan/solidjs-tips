@@ -19,6 +19,7 @@ const TipDetail: Component<TipDetailProps> = (props) => {
 
   const onSeeFullTip = () => {
     navigate(`/${props.tip.id}`)
+    throw new Error("hello sentry")
   }
 
   return (
