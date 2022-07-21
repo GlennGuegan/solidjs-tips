@@ -1,6 +1,5 @@
 import Container from "@suid/material/Container"
-import { createResource, For, onMount } from "solid-js"
-import TipDetail from "../components/TipDetail"
+import { createResource } from "solid-js"
 import TipList from "../components/TipList"
 import { getTips } from "../tips"
 
@@ -8,7 +7,7 @@ const tips = [...Array(20).keys()].map((v) => `Tip - ${v}`)
 
 const Tips = () => {
   const [data] = createResource(getTips)
-  console.log(data.loading)
+
   return (
     <Container
       sx={{

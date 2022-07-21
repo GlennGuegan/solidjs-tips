@@ -1,8 +1,8 @@
-import Box from "@suid/material/Box"
+import Button from "@suid/material/Button"
 import Container from "@suid/material/Container"
 import Typography from "@suid/material/Typography"
-import { useRouteData } from "solid-app-router"
-import { createResource } from "solid-js"
+import { useNavigate, useRouteData } from "solid-app-router"
+import { Accessor, createResource } from "solid-js"
 import { getTip } from "../tips"
 
 export const TipData = ({ params }) => {
@@ -28,14 +28,16 @@ type Tip = {
 }
 
 const TipFullDetail = () => {
-  const tip = useRouteData()
-  console.log(tip())
+  const tip: Accessor<Tip> = useRouteData()
+  const navigate = useNavigate()
+
   return (
     <Container>
+      <Button onClick={() => navigate("/")}>Retour</Button>
       <Typography variant="h2" fontSize={26}>
         {tip()?.data?.attributes.title}
       </Typography>
-      <Typography>{tip()?.data?.attributes?.content}</Typography>
+      <Typography>{tip()?.data.attributes.content}</Typography>
     </Container>
   )
 }
