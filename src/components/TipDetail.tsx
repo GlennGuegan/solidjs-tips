@@ -5,6 +5,7 @@ import CardHeader from "@suid/material/CardHeader"
 import Typography from "@suid/material/Typography"
 import { useNavigate } from "solid-app-router"
 import { Component } from "solid-js"
+import SolidMarkdown from "solid-markdown"
 
 type TipDetailProps = {
   tip: {
@@ -30,6 +31,11 @@ const TipDetail: Component<TipDetailProps> = (props) => {
         </Typography>
         <Typography sx={{ padding: 2 }} variant="body1">
           {props.tip.resume}
+        <Typography
+          sx={{ padding: 2, textAlign: "left" }}
+          variant="body1"
+        >
+          <SolidMarkdown children={props.tip.resume} />
         </Typography>
         <Button variant="text" onClick={onSeeFullTip}>
           En savoir plus
