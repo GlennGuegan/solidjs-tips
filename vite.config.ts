@@ -6,8 +6,8 @@ export default defineConfig(({ command, mode }) => {
 
   return {
     define: {
-      CMS_URL: JSON.stringify(env.SOLID_APP_CMS_URL),
-      CMS_API_KEY: JSON.stringify(env.SOLID_APP_CMS_APIKEY)
+      CMS_URL: JSON.stringify(env.VITE_SOLID_APP_CMS_URL),
+      CMS_API_KEY: JSON.stringify(env.VITE_SOLID_APP_CMS_APIKEY)
     },
     plugins: [solidPlugin()],
     build: {
