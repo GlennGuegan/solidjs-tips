@@ -18,7 +18,11 @@ const TipList = (props: any) => {
     setTips(tipsProps)
   })
 
-  return <For each={tips()}>{(item) => <TipDetail tip={item} />}</For>
+  return (
+    <For each={tips()}>
+      {(item, index) => <TipDetail tip={item} key={index()} />}
+    </For>
+  )
 }
 
 export default TipList

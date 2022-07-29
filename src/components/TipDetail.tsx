@@ -16,6 +16,7 @@ type TipDetailProps = {
     title: string
     resume: string
   }
+  key: number
 }
 
 const TipDetail: Component<TipDetailProps> = (props) => {
@@ -68,7 +69,11 @@ const TipDetail: Component<TipDetailProps> = (props) => {
           />
         </Stack>
 
-        <Button variant="text" onClick={onSeeFullTip}>
+        <Button
+          id={`${props.tip.id}-En savoir plus`}
+          variant="text"
+          onClick={onSeeFullTip}
+        >
           En savoir plus
         </Button>
       </CardContent>
